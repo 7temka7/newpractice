@@ -3,44 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой проект | Главная</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>ЭкоМонитор - Главная</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Логотип проекта" width="50">
-            <h1>Название проекта</h1>
+        <div class="container">
+            <h1>ЭкоМонитор</h1>
+            <p>Система мониторинга экологических показателей</p>
         </div>
-        <nav>
+    </header>
+    
+    <nav>
+        <div class="container">
             <ul>
-                <li><a href="index.html">Главная</a></li>
+                <li class="current"><a href="index.html">Главная</a></li>
                 <li><a href="about.html">О проекте</a></li>
                 <li><a href="team.html">Участники</a></li>
                 <li><a href="journal.html">Журнал</a></li>
                 <li><a href="resources.html">Ресурсы</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h2>Инновационный проект по разработке [тема]</h2>
-            <p>Краткое описание: цель, технологии, значимость.</p>
-            <img src="images/diagram.png" alt="Схема проекта" class="hero-img">
-        </section>
-
-        <section class="news">
-            <h2>Последние новости</h2>
-            <div class="news-item">
-                <h3>Запуск первой версии</h3>
-                <p>01.10.2024: Завершён этап проектирования.</p>
+        </div>
+    </nav>
+    
+    <section id="showcase">
+        <div class="container">
+            <h2>Инновационный подход к экологическому мониторингу</h2>
+            <p>Автоматизированная система для сбора, анализа и визуализации экологических данных</p>
+        </div>
+    </section>
+    
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <img src="images/sensor.png" alt="Датчики">
+                <h3>Умные датчики</h3>
+                <p>Сеть автономных датчиков для измерения параметров окружающей среды</p>
             </div>
-        </section>
-    </main>
-
+            <div class="box">
+                <img src="images/analytics.png" alt="Аналитика">
+                <h3>Анализ данных</h3>
+                <p>Мощные алгоритмы для обработки и анализа экологических показателей</p>
+            </div>
+            <div class="box">
+                <img src="images/visualization.png" alt="Визуализация">
+                <h3>Визуализация</h3>
+                <p>Интерактивные карты и графики для наглядного представления данных</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="newsletter">
+        <div class="container">
+            <h2>Подписаться на обновления проекта</h2>
+            <form>
+                <input type="email" placeholder="Введите email...">
+                <button type="submit" class="button_1">Подписаться</button>
+            </form>
+        </div>
+    </section>
+    
     <footer>
-        <p>© 2024 Название проекта. Все права защищены.</p>
+        <div class="container">
+            <p>ЭкоМонитор &copy; 2023 | Проектная деятельность</p>
+        </div>
     </footer>
 </body>
 </html>

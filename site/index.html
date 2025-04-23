@@ -2,25 +2,45 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой проект</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой проект | Главная</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Название проекта</h1>
+        <div class="logo">
+            <img src="images/logo.png" alt="Логотип проекта" width="50">
+            <h1>Название проекта</h1>
+        </div>
         <nav>
-            <a href="index.html">Главная</a>
-            <a href="about.html">О проекте</a>
-            <a href="team.html">Участники</a>
-            <a href="journal.html">Журнал</a>
-            <a href="resources.html">Ресурсы</a>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="team.html">Участники</a></li>
+                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+            </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Аннотация</h2>
-        <p>Краткое описание проекта...</p>
-        <img src="images/project-preview.jpg" alt="Проект">
+        <section class="hero">
+            <h2>Инновационный проект по разработке [тема]</h2>
+            <p>Краткое описание: цель, технологии, значимость.</p>
+            <img src="images/diagram.png" alt="Схема проекта" class="hero-img">
+        </section>
+
+        <section class="news">
+            <h2>Последние новости</h2>
+            <div class="news-item">
+                <h3>Запуск первой версии</h3>
+                <p>01.10.2024: Завершён этап проектирования.</p>
+            </div>
+        </section>
     </main>
-    <footer>© 2025</footer>
+
+    <footer>
+        <p>© 2024 Название проекта. Все права защищены.</p>
+    </footer>
 </body>
 </html>

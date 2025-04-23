@@ -1,17 +1,92 @@
-body {
-    font-family: Arial, sans-serif;
+/* Базовые стили */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Главный заголовок */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
-nav a {
-    color: #fff;
-    margin: 0 10px;
+
+.main-title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.main-title:hover {
+    color: #555;
+    transform: scale(1.05);
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Секция "О проекте" */
+.about-section {
+    min-height: 100vh;
+    padding: 50px 20px;
+    border-top: 1px solid #eee;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Футер */
+footer {
+    margin-top: auto;
+    padding: 20px 0;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #eee;
 }

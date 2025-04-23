@@ -8,6 +8,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: scroll;
 }
 
 body {
@@ -23,7 +24,22 @@ body {
 
 /* Шапка */
 header {
-    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    background: white;
+    top: 0;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* Добавлено для центрирования */
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     border-bottom: 1px solid #eee;
 }
 
@@ -32,6 +48,8 @@ nav ul {
     justify-content: center;
     list-style: none;
     gap: 25px;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
@@ -42,12 +60,13 @@ nav a {
 
 /* Главный заголовок */
 .hero {
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: -60px;
 }
 
 .main-title {
@@ -69,11 +88,42 @@ nav a {
     color: #666;
 }
 
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    font-size: 4rem;
+    animation: bounce 2s infinite;
+    opacity: 0.6;
+    font-size: 4.5rem;
+    bottom: 30px;
+    font-family: 'Courier New', monospace;
+    image-rendering: pixelated;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateY(-25px) scale(1.1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    75% {
+        transform: translateY(-15px) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
 /* Секция "О проекте" */
 .about-section {
-    min-height: 100vh;
-    padding: 50px 20px;
-    border-top: 1px solid #eee;
+    min-height: 90vh;
+    padding: 100px 20px 50px;
+    margin-top: 100vh;
 }
 
 .about-section h2 {
@@ -89,4 +139,65 @@ footer {
     text-align: center;
     color: #666;
     border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Стили для страницы участников */
+.team-section {
+    padding: 100px 20px;
+    margin-top: 60px;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.role {
+    font-weight: bold;
+    color: #4361ee;
+    margin-bottom: 15px;
+}
+
+/* Адаптивность для участников */
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
 }

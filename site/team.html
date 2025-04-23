@@ -3,52 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проектная деятельность - Участники</title>
+    <title>CTF | Участники</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Название проекта</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О проекте</a></li>
-                <li><a href="team.html">Участники</a></li>
-                <li><a href="journal.html">Журнал</a></li>
-                <li><a href="resources.html">Ресурсы</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#about">О проекте</a></li>
+                    <li><a href="team.html" class="active">Участники</a></li>
+                    <li><a href="journal.html">Журнал</a></li>
+                    <li><a href="resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Участники проекта</h2>
-            <p>Краткое описание команды и ролей участников.</p>
+        <section class="team-section">
+            <h2>Наша команда</h2>
             
-            <div class="team-member">
-                <h3>Имя участника 1</h3>
-                <p>Роль в проекте: Описание роли</p>
-                <p>Вклад: Описание вклада в проект</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Иван Иванов</h3>
+                    <p class="role">Капитан команды</p>
+                    <p>Координация работы, безопасность сетей</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Алексей Петров</h3>
+                    <p class="role">Криптограф</p>
+                    <p>Анализ и взлом шифров</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Мария Сидорова</h3>
+                    <p class="role">Веб-эксперт</p>
+                    <p>Поиск уязвимостей веб-приложений</p>
+                </div>
             </div>
-            
-            <div class="team-member">
-                <h3>Имя участника 2</h3>
-                <p>Роль в проекте: Описание роли</p>
-                <p>Вклад: Описание вклада в проект</p>
-            </div>
-            
-            <div class="team-member">
-                <h3>Имя участника 3</h3>
-                <p>Роль в проекте: Описание роли</p>
-                <p>Вклад: Описание вклада в проект</p>
-            </div>
-            
-            <img src="images/team-photo.jpg" alt="Фото команды">
         </section>
     </main>
 
     <footer>
-        <p>© 2023 Название проекта. Все права защищены.</p>
+        <p>© 2025 CTF Team</p>
     </footer>
 </body>
 </html>

@@ -88,34 +88,34 @@ nav a {
     color: #666;
 }
 
-.scroll-hint {
+.pixel-scroll-hint {
     position: absolute;
-    bottom: 40px;
+    bottom: 50px;
     font-size: 4rem;
-    animation: bounce 2s infinite;
-    opacity: 0.6;
-    font-size: 4.5rem;
-    bottom: 30px;
+    color: #000;
     font-family: 'Courier New', monospace;
+    animation: pixelBounce 1.5s infinite steps(3);
     image-rendering: pixelated;
+    text-shadow: 
+        4px 0 0 #000,
+        0 4px 0 #000,
+        4px 4px 0 #000;
 }
 
-@keyframes bounce {
+@keyframes pixelBounce {
     0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.7;
-    }
-    25% {
-        transform: translateY(-25px) scale(1.1);
-        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 
+            2px 0 0 #000,
+            0 2px 0 #000,
+            2px 2px 0 #000;
     }
     50% {
-        transform: translateY(0) scale(1);
-        opacity: 0.7;
-    }
-    75% {
-        transform: translateY(-15px) scale(1.05);
-        opacity: 0.9;
+        transform: translateY(-8px);
+        text-shadow: 
+            2px -2px 0 #000,
+            0 0 0 #000,
+            2px 0 0 #000;
     }
 }
 
@@ -166,38 +166,87 @@ footer {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .team-member {
-    background: #f9f9f9;
-    padding: 25px;
+    background: #f8f9fa;
+    border: 1px solid #eee;
     border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-link {
+    display: block;
+    padding: 25px;
+    color: inherit;
+    text-decoration: none;
 }
 
 .team-member:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #4361ee;
 }
 
 .team-member h3 {
     color: #2c3e50;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.team-member:hover h3 {
+    color: #4361ee;
 }
 
 .role {
     font-weight: bold;
     color: #4361ee;
+    position: relative;
+    display: inline-block;
     margin-bottom: 15px;
 }
 
-/* Адаптивность для участников */
-@media (max-width: 600px) {
+.role::after {
+    content: "→";
+    margin-left: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-member:hover .role::after {
+    opacity: 1;
+}
+
+/* Иконка GitHub */
+.team-member::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232c3e50"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>');
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.team-member:hover::before {
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
     .team-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .team-section {
+        padding: 60px 15px;
     }
 }
